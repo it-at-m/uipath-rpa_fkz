@@ -1,0 +1,304 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "str_statusReportFileName&StateMachine_1",
+        "str_statusReportFilePath&StateMachine_1",
+        "str_workingFolderPath&StateMachine_1",
+        "liststr_statusReportsFullPath&StateMachine_1",
+        "str_mail_Userid&StateMachine_1",
+        "secstr_mail_Password&StateMachine_1",
+        "str_mail_SmtpServer&StateMachine_1",
+        "int_mail_SmtpPort&StateMachine_1",
+        "str_mail_Body&StateMachine_1",
+        "str_mail_Subject&StateMachine_1",
+        "str_mail_SenderFromMailId&StateMachine_1",
+        "str_mail_SenderFromName&StateMachine_1",
+        "liststr_mail_Attachments&StateMachine_1",
+        "str_mail_PerformerMailRecipient&StateMachine_1",
+        "arrystr_FilesInQTFolder&StateMachine_1",
+        "dt_toConsolidateTable&StateMachine_1",
+        "arrystr_FilesInConsolidationFolder&StateMachine_1",
+        "str_processedMonthValue&StateMachine_1",
+        "str_consolidatedFileName&StateMachine_1",
+        "dt_fehlerTable&StateMachine_1",
+        "liststr_uniqueStatusReportsPath&State_4",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/SAP/SAP_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "tmp_sap_Password&Sequence_1",
+        "str_sap_Username&Sequence_1",
+        "str_sap_Client&Sequence_1",
+        "str_sap_Language&Sequence_1",
+        "secstr_sap_Password&Sequence_1",
+        "str_sap_ConnectionName&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/SAP/SAP_Dispatcher.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_firstSapTransaction&Sequence_1",
+        "str_queryName&Sequence_1",
+        "str_queryResultTreffer&Sequence_1",
+        "int_queryResultTreffer&Sequence_1",
+        "dt_queryNameTable&Sequence_1",
+        "int_queryNameRowIndex&Sequence_1",
+        "datetime_queryStartDate&Sequence_1",
+        "datetime_queryEndDate&Sequence_1",
+        "str_queryStartDate&Sequence_1",
+        "str_queryEndDate&Sequence_1",
+        "str_transactionsCount&Sequence_1",
+        "dt_queryTableFull&Sequence_1",
+        "dt_statusReportTemplate&Sequence_1",
+        "str_workingFolderPath&Sequence_1",
+        "str_input_StatusReportPath&Sequence_1",
+        "str_StatusReportFileName&Sequence_1",
+        "int_excelRowIndex&Sequence_1",
+        "str_OrchestratorFolderName&Sequence_1",
+        "str_OrchestratorQueueName&Sequence_1",
+        "str_mailSMTPServer&Sequence_1",
+        "int_mailSMTPPort&Sequence_1",
+        "str_robot_UserID&Sequence_1",
+        "secstr_robot_Password&Sequence_1",
+        "str_groupMailbox&Sequence_1",
+        "str_dispatcherMailRecipient&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/SAP/SAP_OpenPersonDetailsTransaction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_secondSapTransaction&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_personalNummer&Sequence_1",
+        "str_fullName&Sequence_1",
+        "str_gebDatum&Sequence_1",
+        "str_finalRemark&Sequence_1",
+        "str_finalStatus&Sequence_1",
+        "dt_statusReportInputTable&Sequence_1",
+        "int_excelRowIndex&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_str_workingFolderPath",
+        "out_str_statusReportFileName",
+        "out_str_statusReportFilePath",
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/SAP/SAP_Input_ReviewTravelAllowance.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_personalNummer&Sequence_1",
+        "str_initialBeginnDatum&Sequence_1",
+        "int_tmp_rowCounter&Sequence_1",
+        "str_maGrp&Sequence_8",
+        "str_art&Sequence_8",
+        "str_infoTyp&Sequence_8",
+        "str_travelAllowanceStatusBar&Sequence_8",
+        "str_endDate&Sequence_8",
+        "datetime_initialBeginnDatum&Sequence_8",
+        "datetime_sixMonthsAgo&Sequence_8",
+        "str_655_StatusbarMessage&Sequence_8",
+        "bool_mailCheckbox&Sequence_8",
+        "str_9027_StatusbarMessage&Sequence_8",
+        "str_reminderRecipient_MailId&Sequence_8",
+        "str_mail_Userid&Sequence_8",
+        "secstr_mail_Password&Sequence_8",
+        "str_mail_SmtpServer&Sequence_8",
+        "int_mail_SmtpPort&Sequence_8",
+        "str_mail_Body&Sequence_8",
+        "str_mail_Subject&Sequence_8",
+        "str_mail_SenderFromMailId&Sequence_8",
+        "str_mail_SenderFromName&Sequence_8",
+        "liststr_mail_Attachments&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_str_personalNummer",
+        "out_str_fullName",
+        "out_str_finalRemark",
+        "out_str_finalStatus",
+        "out_str_GebDatum",
+        "in_int_excelRowIndex",
+        "in_str_statusReportFilePath",
+        "in_dt_statusReportInputTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/SAP/SAP_Logout.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "int_initialCounter&Sequence_1",
+        "bool_logoutDone&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/Excel/Excel_WriteStatusReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_str_finalRemark",
+        "in_str_finalStatus",
+        "in_str_gebDatum",
+        "in_str_fullName",
+        "in_str_personalNummer",
+        "in_int_excelRowIndex",
+        "in_str_statusReportFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_mail_SmtpServer&Sequence_17",
+        "int_mail_SmtpPort&Sequence_17",
+        "str_mail_Subject&Sequence_17",
+        "str_mail_Body&Sequence_17",
+        "str_mail_SenderFromMailId&Sequence_17",
+        "str_mail_SenderFromName&Sequence_17",
+        "str_reminderRecipient_MailId&Sequence_17",
+        "str_FileFullPath&Sequence_1",
+        "liststr_Paths&Sequence_1",
+        "str_1&Sequence_1",
+        "str_2&Sequence_1",
+        "str_3&Sequence_1",
+        "str_4&Sequence_1",
+        "liststr_UniquePaths&Sequence_1",
+        "Files&Sequence_1",
+        "bool_checkMark&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/SAP/SAP_GoToSAP_GoToPersonalstammdaten.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_homescreenDone&Sequence_1",
+        "int_initialCounter&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Modules/Mail/Mail_SendEmail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_liststr_Attachments",
+        "in_str_mailSernderFromMailid",
+        "in_str_mailSenderName",
+        "in_secstr_mailPassword",
+        "in_str_mailUserid",
+        "in_int_mailPort",
+        "in_str_mailServer",
+        "in_str_Body",
+        "in_str_subjectLine",
+        "in_str_recipientMailId"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
