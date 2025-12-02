@@ -1,0 +1,321 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "uie_sapWnd&StateMachine_1",
+        "dict_txns&StateMachine_1",
+        "sw_txnWatch&StateMachine_1",
+        "dict_txnsItem&StateMachine_1",
+        "jss_jsonSettings&StateMachine_1",
+        "dt_reportHeader&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_personalnumber&Sequence_1",
+        "str_enddate&Sequence_1",
+        "str_finalBemerkung&Sequence_1",
+        "dt_searchResults&Sequence_1",
+        "dtime_evaluationdate&Sequence_1",
+        "bool_personFound&Sequence_1",
+        "dtime_startdate&Sequence_1",
+        "str_email&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionID",
+        "io_dict_txnsItem",
+        "io_dict_txns",
+        "in_jss_jsonSettings",
+        "io_sw_txnWatch",
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Email Workflows/Email - Send Email.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_smptLoginUser&Sequence_1",
+        "str_emailLoginPassword&Sequence_1",
+        "str_senderNameFinal&Sequence_1",
+        "str_senderEmailFinal&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_str_senderEmail",
+        "in_list_attachments",
+        "in_str_body",
+        "in_str_recipient",
+        "in_str_subject",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config",
+        "out_dict_txns",
+        "out_jss_jsonSettings",
+        "out_dt_reportHeader"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_canAppendToReport&Flowchart_2",
+        "QueueRetry&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_TransactionID",
+        "in_SystemException",
+        "in_TransactionItem",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "io_ConsecutiveSystemExceptions",
+        "io_sw_txnWatch",
+        "in_dict_txnsItem",
+        "in_dt_reportHeader",
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_sapUsername&Sequence_1",
+        "str_sapClient&Sequence_1",
+        "str_sapLanguage&Sequence_1",
+        "secstr_sapPassword&Sequence_1",
+        "str_sapConnectionName&Sequence_1",
+        "str_sapSystemName&Sequence_1",
+        "str_currentMenuTitle&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/File Workflows/Json - Persist Transaction In Txns And In-Memory.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "io_dict_txns",
+        "in_Config",
+        "in_dict_txnsItem",
+        "in_jss_jsonSettings",
+        "in_str_txnsItemKey"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/File Workflows/Excel - Append Transaction To Report.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_toAppendingRows&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dict_txnsItem",
+        "in_dt_reportHeader",
+        "in_str_txnsItemKey",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/File Workflows/Json - Update Transactions Statistics.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_dict_txns",
+        "io_Config",
+        "in_bool_shouldSumDuration"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_TransactionItem",
+        "out_TransactionID",
+        "in_dict_txns",
+        "out_dict_txnsItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/RetryCurrentTransaction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "in_SystemException",
+        "in_QueueRetry",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "io_uie_sapWnd",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Close.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "io_uie_sapWnd",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Navigate Destination Menu.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_onDestMenu&Sequence_1",
+        "str_destMenuTitle&Sequence_1",
+        "str_destMenuCode&Sequence_1",
+        "bool_onMainMenu&Sequence_1",
+        "str_mainMenuTitle&Sequence_1",
+        "str_currentMenuTitle&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_str_destMenuDetails",
+        "in_str_mainMenuDetails",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Search With Personal Data.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_statusMessageSAP&Sequence_1",
+        "bool_labelNameExists&Sequence_1",
+        "str_attrStateInfoType&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_str_personalnumber",
+        "in_str_infotype",
+        "in_str_subtype",
+        "out_bool_searchFound",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Retrieve Subtype '14' Results.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_inputSubtype&Sequence_1",
+        "str_statusMessageSAP&Sequence_1",
+        "str_currentMenuTitle&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_dict_txnsItem",
+        "out_dt_searchResults",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Search Available Email.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_essActive&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_str_email",
+        "in_str_personalnumber",
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
