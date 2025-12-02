@@ -43,16 +43,19 @@
         "dtime_evaluationdate&Sequence_1",
         "bool_personFound&Sequence_1",
         "dtime_startdate&Sequence_1",
-        "str_email&Sequence_1"
+        "str_email&Sequence_1",
+        "str_inputSubtype&Sequence_1",
+        "str_statusMessageSAP&Sequence_1",
+        "str_currentMenuTitle&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_TransactionID",
         "io_dict_txnsItem",
+        "io_uie_sapWnd",
+        "io_sw_txnWatch",
         "io_dict_txns",
         "in_jss_jsonSettings",
-        "io_sw_txnWatch",
-        "in_Config",
-        "io_uie_sapWnd"
+        "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -142,7 +145,9 @@
     {
       "Path": "Workflows/File Workflows/Json - Persist Transaction In Txns And In-Memory.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "dt_toAppendingRows&Sequence_1"
+      ],
       "ArgumentsSectionElementsOrder": [
         "io_dict_txns",
         "in_Config",
@@ -157,6 +162,10 @@
       "Path": "Workflows/File Workflows/Excel - Append Transaction To Report.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_smptLoginUser&Sequence_1",
+        "str_emailLoginPassword&Sequence_1",
+        "str_senderNameFinal&Sequence_1",
+        "str_senderEmailFinal&Sequence_1",
         "dt_toAppendingRows&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -272,6 +281,14 @@
       "Path": "Workflows/SAP Workflows/SAP - Search With Personal Data.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_personalnumber&Sequence_1",
+        "str_enddate&Sequence_1",
+        "str_finalBemerkung&Sequence_1",
+        "dt_searchResults&Sequence_1",
+        "dtime_evaluationdate&Sequence_1",
+        "bool_personFound&Sequence_1",
+        "dtime_startdate&Sequence_1",
+        "str_email&Sequence_1",
         "str_statusMessageSAP&Sequence_1",
         "bool_labelNameExists&Sequence_1",
         "str_attrStateInfoType&Sequence_1"
@@ -290,6 +307,14 @@
       "Path": "Workflows/SAP Workflows/SAP - Retrieve Subtype '14' Results.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_personalnumber&Sequence_1",
+        "str_enddate&Sequence_1",
+        "str_finalBemerkung&Sequence_1",
+        "dt_searchResults&Sequence_1",
+        "dtime_evaluationdate&Sequence_1",
+        "bool_personFound&Sequence_1",
+        "dtime_startdate&Sequence_1",
+        "str_email&Sequence_1",
         "str_inputSubtype&Sequence_1",
         "str_statusMessageSAP&Sequence_1",
         "str_currentMenuTitle&Sequence_1"

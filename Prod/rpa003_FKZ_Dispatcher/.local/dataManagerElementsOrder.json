@@ -1,0 +1,304 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "SystemException&StateMachine_1",
+        "Config&StateMachine_1",
+        "uie_sapWnd&StateMachine_1",
+        "dict_txns&StateMachine_1",
+        "sw_watch&StateMachine_1",
+        "jss_jsonSettings&StateMachine_1",
+        "dt_reportHeader&StateMachine_1",
+        "int_countFailed&StateMachine_1",
+        "int_countSkipped&StateMachine_1",
+        "int_countSuccess&StateMachine_1",
+        "int_countTotal&StateMachine_1",
+        "str_duration&StateMachine_1",
+        "bool_existsAlreadyPeriodFolder&StateMachine_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Main Workflows/Queue - Upload Batch.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "int_currentBatchRetry&Sequence_1",
+        "dict_txnsItem&Sequence_1",
+        "bool_currentBatchSuccess&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_list_currentBatchIds",
+        "io_dt_currentBatch",
+        "io_int_countSuccess",
+        "io_int_countFailed",
+        "in_int_currentBatchIndex",
+        "in_int_calcBatches",
+        "io_dict_txns",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Main Workflows/Upload Transactions To Queue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dict_txns&Sequence_1",
+        "dt_currentBatch&Sequence_1",
+        "list_currentBatchIds&Sequence_1",
+        "int_currentBatchIndex&Sequence_1",
+        "bool_shouldSave&Sequence_1",
+        "dict_txnsItem&Sequence_1",
+        "int_calcBatches&Sequence_1",
+        "int_calcMaxBatchSize&Sequence_1",
+        "int_calcWriteIntervals&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_jss_jsonSettings",
+        "io_int_countSuccess",
+        "io_int_countFailed",
+        "io_int_countSkipped",
+        "in_int_countTotal",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/File Workflows/Excel - Append Transaction To Report.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_toAppendingRows&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dict_txnsItem",
+        "in_Config",
+        "in_dt_reportHeader",
+        "in_str_txnsItemKey"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Extract Query Results.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_dt_results",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Navigate Destination Menu.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_sapUsername&Sequence_1",
+        "str_sapClient&Sequence_1",
+        "str_sapLanguage&Sequence_1",
+        "secstr_sapPassword&Sequence_1",
+        "str_sapConnectionName&Sequence_1",
+        "str_sapSystemName&Sequence_1",
+        "bool_onDestMenu&Sequence_1",
+        "str_destMenuTitle&Sequence_1",
+        "str_destMenuCode&Sequence_1",
+        "bool_onMainMenu&Sequence_1",
+        "str_mainMenuTitle&Sequence_1",
+        "str_currentMenuTitle&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_str_destMenuDetails",
+        "io_uie_sapWnd",
+        "in_str_mainMenuDetails"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config",
+        "out_jss_jsonSettings",
+        "out_dt_reportHeader",
+        "out_bool_existsAlreadyPeriodFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Main Workflows/Prepare Period Folder.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_dt_reportHeader",
+        "in_Config",
+        "out_bool_existsAlreadyPeriodFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_results&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_int_countSuccess",
+        "io_int_countSkipped",
+        "io_int_countFailed",
+        "io_int_countTotal",
+        "in_jss_jsonSettings",
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "io_uie_sapWnd",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/File Workflows/Json - Serialize Results.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dict_txns&Sequence_1",
+        "dict_map&Sequence_1",
+        "list_mapKeys&Sequence_1",
+        "list_mapValues&Sequence_1",
+        "dict_txnsItemTpl&Sequence_1",
+        "list_txnsItemTplKeys&Sequence_1",
+        "list_txnsItemTplValues&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_dt_results",
+        "in_jss_jsonSettings",
+        "io_int_countTotal"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Main Workflows/Finalize Failed Transactions To Report.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dict_txns&Sequence_1",
+        "dict_txnsItem&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dt_reportHeader",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Close.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dict_txns&Sequence_1",
+        "dict_map&Sequence_1",
+        "list_mapKeys&Sequence_1",
+        "list_mapValues&Sequence_1",
+        "dict_txnsItemTpl&Sequence_1",
+        "list_txnsItemTplKeys&Sequence_1",
+        "list_txnsItemTplValues&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_uie_sapWnd",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/SAP Workflows/SAP - Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_sapUsername&Sequence_1",
+        "str_sapClient&Sequence_1",
+        "str_sapLanguage&Sequence_1",
+        "secstr_sapPassword&Sequence_1",
+        "str_sapConnectionName&Sequence_1",
+        "str_sapSystemName&Sequence_1",
+        "str_currentMenuTitle&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Email Workflows/Email - Send Email.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_smptLoginUser&Sequence_1",
+        "str_emailLoginPassword&Sequence_1",
+        "str_senderNameFinal&Sequence_1",
+        "str_senderEmailFinal&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_list_attachments",
+        "in_str_body",
+        "in_str_recipient",
+        "in_str_subject",
+        "in_Config",
+        "in_str_senderEmail"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
