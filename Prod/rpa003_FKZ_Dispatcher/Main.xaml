@@ -19,6 +19,8 @@
       <x:String>System.IO</x:String>
       <x:String>System.Diagnostics</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,7 +119,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="876.8000000000001,563.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="876.8000000000001,337.704" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,9 +191,11 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="If io_sw_watch IsNot Nothing AndAlso io_sw_watch.IsRunning Then io_sw_watch.Stop()" DisplayName="[STOP] Watch" sap:VirtualizedContainerService.HintSize="382.4,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="If io_sw_jobWatch IsNot Nothing AndAlso io_sw_jobWatch.IsRunning Then io_sw_jobWatch.Stop()" DisplayName="[STOP] Job Watch" sap:VirtualizedContainerService.HintSize="382.4,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
                         <ui:InvokeCode.Arguments>
-                          <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_watch">[sw_watch]</InOutArgument>
+                          <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_jobWatch">
+                            <VisualBasicReference x:TypeArguments="sd:Stopwatch" ExpressionText="sw_jobWatch" />
+                          </InOutArgument>
                         </ui:InvokeCode.Arguments>
                       </ui:InvokeCode>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email - Send Email - Invoke Workflow File (Workflows\Email Workflows\Email - Send Email.xaml)" sap:VirtualizedContainerService.HintSize="382.4,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_60" UnSafe="False" WorkflowFileName="Workflows\Email Workflows\Email - Send Email.xaml">
@@ -208,7 +212,7 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_str_senderEmail" />
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Process ended after &quot; &amp; (If(sw_watch.Elapsed.Days&gt;0, sw_watch.Elapsed.Days &amp; &quot;d &quot;, &quot;&quot;) &amp; If(sw_watch.Elapsed.Hours&gt;0, sw_watch.Elapsed.Hours &amp; &quot;h &quot;, &quot;&quot;) &amp; If(sw_watch.Elapsed.Minutes&gt;0, sw_watch.Elapsed.Minutes &amp; &quot;m &quot;, &quot;&quot;) &amp; sw_watch.Elapsed.Seconds &amp; &quot;s&quot;).Trim() &amp; &quot;. (Canceled)&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Process ended after &quot; &amp; (If(sw_jobWatch.Elapsed.Days&gt;0, sw_jobWatch.Elapsed.Days &amp; &quot;d &quot;, &quot;&quot;) &amp; If(sw_jobWatch.Elapsed.Hours&gt;0, sw_jobWatch.Elapsed.Hours &amp; &quot;h &quot;, &quot;&quot;) &amp; If(sw_jobWatch.Elapsed.Minutes&gt;0, sw_jobWatch.Elapsed.Minutes &amp; &quot;m &quot;, &quot;&quot;) &amp; sw_jobWatch.Elapsed.Seconds &amp; &quot;s&quot;).Trim() &amp; &quot;. (Canceled)&quot;]" />
                       <TerminateWorkflow DisplayName="Terminate Main Workflow" Exception="[SystemException]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_2" />
                     </Sequence>
                   </If.Then>
@@ -225,16 +229,18 @@
               </Sequence>
             </TryCatch.Finally>
           </TryCatch>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="If io_sw_watch IsNot Nothing AndAlso io_sw_watch.IsRunning Then io_sw_watch.Stop()" DisplayName="[STOP] StopWatch" sap:VirtualizedContainerService.HintSize="452.8,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="If io_sw_jobWatch IsNot Nothing AndAlso io_sw_jobWatch.IsRunning Then io_sw_jobWatch.Stop()" DisplayName="[STOP] Job Watch" sap:VirtualizedContainerService.HintSize="452.8,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
             <ui:InvokeCode.Arguments>
-              <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_watch">[sw_watch]</InOutArgument>
+              <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_jobWatch">
+                <VisualBasicReference x:TypeArguments="sd:Stopwatch" ExpressionText="sw_jobWatch" />
+              </InOutArgument>
             </ui:InvokeCode.Arguments>
           </ui:InvokeCode>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email - Send Email - Invoke Workflow File (Workflows\Email Workflows\Email - Send Email.xaml)" sap:VirtualizedContainerService.HintSize="452.8,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_61" UnSafe="False" WorkflowFileName="Workflows\Email Workflows\Email - Send Email.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_list_attachments">[new List(Of String)]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_str_body" xml:space="preserve">[File.ReadAllText(Path.Combine(Config("PathTemplatesFolder").ToString, "email_dis_body_end.txt")) _
-    .Replace("{DURATION}", (If(sw_watch.Elapsed.Days&gt;0, sw_watch.Elapsed.Days &amp; "d ", "") &amp; If(sw_watch.Elapsed.Hours&gt;0, sw_watch.Elapsed.Hours &amp; "h ", "") &amp; If(sw_watch.Elapsed.Minutes&gt;0, sw_watch.Elapsed.Minutes &amp; "m ", "") &amp; sw_watch.Elapsed.Seconds &amp; "s").Trim()) _
+    .Replace("{DURATION}", (If(sw_jobWatch.Elapsed.Days&gt;0, sw_jobWatch.Elapsed.Days &amp; "d ", "") &amp; If(sw_jobWatch.Elapsed.Hours&gt;0, sw_jobWatch.Elapsed.Hours &amp; "h ", "") &amp; If(sw_jobWatch.Elapsed.Minutes&gt;0, sw_jobWatch.Elapsed.Minutes &amp; "m ", "") &amp; sw_jobWatch.Elapsed.Seconds &amp; "s").Trim()) _
 	.Replace("{C_TOTAL}", int_countTotal.ToString) _
 	.Replace("{C_SUCCESS}", int_countSuccess.ToString) _
 	.Replace("{C_FAILED}", int_countFailed.ToString) _
@@ -249,7 +255,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_str_senderEmail" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Process ended after &quot; &amp; (If(sw_watch.Elapsed.Days&gt;0, sw_watch.Elapsed.Days &amp; &quot;d &quot;, &quot;&quot;) &amp; If(sw_watch.Elapsed.Hours&gt;0, sw_watch.Elapsed.Hours &amp; &quot;h &quot;, &quot;&quot;) &amp; If(sw_watch.Elapsed.Minutes&gt;0, sw_watch.Elapsed.Minutes &amp; &quot;m &quot;, &quot;&quot;) &amp; sw_watch.Elapsed.Seconds &amp; &quot;s&quot;).Trim() &amp; &quot;. (Successful)&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Process ended after &quot; &amp; (If(sw_jobWatch.Elapsed.Days&gt;0, sw_jobWatch.Elapsed.Days &amp; &quot;d &quot;, &quot;&quot;) &amp; If(sw_jobWatch.Elapsed.Hours&gt;0, sw_jobWatch.Elapsed.Hours &amp; &quot;h &quot;, &quot;&quot;) &amp; If(sw_jobWatch.Elapsed.Minutes&gt;0, sw_jobWatch.Elapsed.Minutes &amp; &quot;m &quot;, &quot;&quot;) &amp; sw_jobWatch.Elapsed.Seconds &amp; &quot;s&quot;).Trim() &amp; &quot;. (Successful)&quot;]" />
         </Sequence>
       </State.Entry>
       <sap:WorkflowViewStateService.ViewState>
@@ -264,9 +270,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="151.2,140" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="532.8,2937.6" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="488,2459.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="488,2517.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -274,16 +280,16 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="486.4,2069.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="486.4,2128" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="[START] Watch" sap:VirtualizedContainerService.HintSize="452.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_35">
+              <Assign DisplayName="[START] Job Watch" sap:VirtualizedContainerService.HintSize="452.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_35">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="sd:Stopwatch">[sw_watch]</OutArgument>
+                  <OutArgument x:TypeArguments="sd:Stopwatch">[sw_jobWatch]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="sd:Stopwatch">[Stopwatch.StartNew()]</InArgument>
@@ -297,7 +303,7 @@
                   <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="452.8,1584.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="452.8,1643.2" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -306,7 +312,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="451.2,1312.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="451.2,1371.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -325,7 +331,7 @@
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_list_attachments">[New List(of String)]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_str_body" xml:space="preserve">[File.ReadAllText(Path.Combine(Config("PathTemplatesFolder").ToString, "email_gen_body_start.txt")) _
-	.Replace("{C_TOPROCESS}", "Nicht Bekannt") _
+	.Replace("{C_OPEN}", "Nicht Bekannt") _
 	.Replace("{DURATION}", "Nicht Bekannt")]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_str_recipient">[Config("rpa003_Mailbox_Notifications").ToString]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_str_subject" xml:space="preserve">[File.ReadAllText(Path.Combine(Config("PathTemplatesFolder").ToString, "email_gen_subject_general.txt")) _
@@ -336,7 +342,7 @@
                         <InArgument x:TypeArguments="x:String" x:Key="in_str_senderEmail" />
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <If Condition="[bool_existsAlreadyPeriodFolder]" DisplayName="If " sap:VirtualizedContainerService.HintSize="417.6,336.8" sap2010:WorkflowViewState.IdRef="If_17">
+                    <If Condition="[bool_existsAlreadyPeriodFolder]" DisplayName="If " sap:VirtualizedContainerService.HintSize="417.6,395.2" sap2010:WorkflowViewState.IdRef="If_17">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173.6" sap2010:WorkflowViewState.IdRef="Sequence_67">
                           <sap:WorkflowViewStateService.ViewState>
@@ -348,7 +354,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83.2" sap2010:WorkflowViewState.IdRef="Sequence_68">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -461,7 +467,7 @@
             <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException Is Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
           </Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Process a whole transaction. &#xA;The result of the processing can be: 1) Success, 2) System Exception. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="513.6,1193.6" sap2010:WorkflowViewState.IdRef="State_8">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Process a whole transaction. &#xA;The result of the processing can be: 1) Success, 2) System Exception. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="174.4,172" sap2010:WorkflowViewState.IdRef="State_8">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="468.8,760.8" sap2010:WorkflowViewState.IdRef="TryCatch_17">
                   <sap:WorkflowViewStateService.ViewState>
@@ -605,7 +611,7 @@
       <Variable x:TypeArguments="s:Exception" sap2010:Annotation.AnnotationText="Used during transitions between states to represent exceptions other than business exceptions." Name="SystemException" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="Config" />
       <Variable x:TypeArguments="ui:UiElement" Name="uie_sapWnd" />
-      <Variable x:TypeArguments="sd:Stopwatch" Name="sw_watch" />
+      <Variable x:TypeArguments="sd:Stopwatch" Name="sw_jobWatch" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_existsAlreadyPeriodFolder" />
       <Variable x:TypeArguments="x:Int32" Name="int_countTotal" />
       <Variable x:TypeArguments="x:Int32" Name="int_countSuccess" />

@@ -12,10 +12,10 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "sw_jobWatch&StateMachine_1",
         "SystemException&StateMachine_1",
         "Config&StateMachine_1",
         "uie_sapWnd&StateMachine_1",
-        "sw_watch&StateMachine_1",
         "bool_existsAlreadyPeriodFolder&StateMachine_1",
         "int_countTotal&StateMachine_1",
         "int_countSuccess&StateMachine_1",
