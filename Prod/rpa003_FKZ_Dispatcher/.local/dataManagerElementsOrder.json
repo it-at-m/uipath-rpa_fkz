@@ -11,17 +11,7 @@
     {
       "Path": "Main.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "sw_jobWatch&StateMachine_1",
-        "SystemException&StateMachine_1",
-        "Config&StateMachine_1",
-        "uie_sapWnd&StateMachine_1",
-        "bool_existsAlreadyPeriodFolder&StateMachine_1",
-        "int_countTotal&StateMachine_1",
-        "int_countSuccess&StateMachine_1",
-        "int_countFailed&StateMachine_1",
-        "int_countSkipped&StateMachine_1"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -128,6 +118,7 @@
         "dt_results&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "io_int_countRemoved",
         "io_int_countSuccess",
         "io_int_countSkipped",
         "io_int_countFailed",
@@ -233,6 +224,19 @@
         "in_str_subject",
         "in_Config",
         "in_str_senderEmail"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Main Workflows/Deduplicate Query Results.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "int_countOriginal&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_int_countRemoved",
+        "io_dt_results"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

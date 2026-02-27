@@ -119,7 +119,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="876.8000000000001,337.704" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="892.8000000000001,563.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -130,7 +130,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="150.4,120" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="531.2,2660.8" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
       <State.Entry>
         <Sequence sap:VirtualizedContainerService.HintSize="486.4,2516" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <sap:WorkflowViewStateService.ViewState>
@@ -193,9 +193,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeCode ContinueOnError="{x:Null}" Code="If io_sw_jobWatch IsNot Nothing AndAlso io_sw_jobWatch.IsRunning Then io_sw_jobWatch.Stop()" DisplayName="[STOP] Job Watch" sap:VirtualizedContainerService.HintSize="382.4,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
                         <ui:InvokeCode.Arguments>
-                          <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_jobWatch">
-                            <VisualBasicReference x:TypeArguments="sd:Stopwatch" ExpressionText="sw_jobWatch" />
-                          </InOutArgument>
+                          <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_jobWatch">[sw_jobWatch]</InOutArgument>
                         </ui:InvokeCode.Arguments>
                       </ui:InvokeCode>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email - Send Email - Invoke Workflow File (Workflows\Email Workflows\Email - Send Email.xaml)" sap:VirtualizedContainerService.HintSize="382.4,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_60" UnSafe="False" WorkflowFileName="Workflows\Email Workflows\Email - Send Email.xaml">
@@ -231,9 +229,7 @@
           </TryCatch>
           <ui:InvokeCode ContinueOnError="{x:Null}" Code="If io_sw_jobWatch IsNot Nothing AndAlso io_sw_jobWatch.IsRunning Then io_sw_jobWatch.Stop()" DisplayName="[STOP] Job Watch" sap:VirtualizedContainerService.HintSize="452.8,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
             <ui:InvokeCode.Arguments>
-              <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_jobWatch">
-                <VisualBasicReference x:TypeArguments="sd:Stopwatch" ExpressionText="sw_jobWatch" />
-              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:Stopwatch" x:Key="io_sw_jobWatch">[sw_jobWatch]</InOutArgument>
             </ui:InvokeCode.Arguments>
           </ui:InvokeCode>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email - Send Email - Invoke Workflow File (Workflows\Email Workflows\Email - Send Email.xaml)" sap:VirtualizedContainerService.HintSize="452.8,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_61" UnSafe="False" WorkflowFileName="Workflows\Email Workflows\Email - Send Email.xaml">
@@ -245,6 +241,7 @@
 	.Replace("{C_SUCCESS}", int_countSuccess.ToString) _
 	.Replace("{C_FAILED}", int_countFailed.ToString) _
 	.Replace("{C_SKIPPED}", int_countSkipped.ToString) _
+	.Replace("{C_REMOVED}", int_countRemoved.ToString) _
 	.Replace("{PERIOD}", Config("Period").ToString)]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_str_recipient">[Config("rpa003_Mailbox_Notifications").ToString]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_str_subject" xml:space="preserve">[File.ReadAllText(Path.Combine(Config("PathTemplatesFolder").ToString, "email_gen_subject_general.txt")) _
@@ -270,7 +267,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="532.8,2937.6" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="151.2,140" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="488,2517.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -499,6 +496,7 @@
                           <InOutArgument x:TypeArguments="x:Int32" x:Key="io_int_countFailed">[int_countFailed]</InOutArgument>
                           <InOutArgument x:TypeArguments="x:Int32" x:Key="io_int_countSkipped">[int_countSkipped]</InOutArgument>
                           <InOutArgument x:TypeArguments="x:Int32" x:Key="io_int_countSuccess">[int_countSuccess]</InOutArgument>
+                          <InOutArgument x:TypeArguments="x:Int32" x:Key="io_int_countRemoved">[int_countRemoved]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -617,6 +615,7 @@
       <Variable x:TypeArguments="x:Int32" Name="int_countSuccess" />
       <Variable x:TypeArguments="x:Int32" Name="int_countFailed" />
       <Variable x:TypeArguments="x:Int32" Name="int_countSkipped" />
+      <Variable x:TypeArguments="x:Int32" Name="int_countRemoved" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
