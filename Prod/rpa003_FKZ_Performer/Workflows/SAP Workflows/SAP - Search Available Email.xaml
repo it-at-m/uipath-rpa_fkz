@@ -108,9 +108,17 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP___Search_Available_Email" sap:VirtualizedContainerService.HintSize="796.0000000000001,2594.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP___Search_Available_Email" sap:VirtualizedContainerService.HintSize="876.0000000000001,2594.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_essActive" />
     </Sequence.Variables>
@@ -216,11 +224,9 @@
                       </uix:TargetAnchorable>
                     </uix:NGetText.Target>
                   </uix:NGetText>
-                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="If String.IsNullOrWhiteSpace(io_str_email) Then&#xD;&#xA;    io_str_email = &quot;&quot;&#xD;&#xA;    Return&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;Try&#xD;&#xA;    Dim str_cleanEmail = io_str_email.Trim.ToLowerInvariant&#xD;&#xA;    io_str_email = New System.Net.Mail.MailAddress(str_cleanEmail).Address&#xD;&#xA;Catch&#xD;&#xA;    io_str_email = &quot;&quot;&#xD;&#xA;End Try" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="382.4,188" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="If String.IsNullOrWhiteSpace(io_str_email) Then&#xA;    io_str_email = &quot;&quot;&#xA;    Return&#xA;End If&#xA;&#xA;Try&#xA;    Dim str_cleanEmail = io_str_email.Trim.ToLowerInvariant&#xA;    io_str_email = New System.Net.Mail.MailAddress(str_cleanEmail).Address&#xA;Catch&#xA;    io_str_email = &quot;&quot;&#xA;End Try" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="382.4,188" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                     <ui:InvokeCode.Arguments>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="io_str_email">
-                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_str_email" />
-                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="io_str_email">[out_str_email]</InOutArgument>
                     </ui:InvokeCode.Arguments>
                   </ui:InvokeCode>
                 </Sequence>

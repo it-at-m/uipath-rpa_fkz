@@ -1,7 +1,7 @@
 {
   "name": "rpa003_FKZ_Performer",
   "projectId": "ba186c2c-4e07-465f-b1d7-e6f5e748624e",
-  "description": "Leerer Prozess",
+  "description": "Performer des FKZs für das Prod-System finale. Der Performer hat folgende Aufgabe:\r\n- Holen der Items aus der Queue\r\n- Bearbeitet die Items nach Vorlage des PDDs\r\n- Legt die bearbeiteten Items in den Report ab\r\n- Versendet E-Mails",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.24.3]",
@@ -14,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.1.0",
-  "projectVersion": "1.1.0.7",
+  "projectVersion": "1.1.0.24",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

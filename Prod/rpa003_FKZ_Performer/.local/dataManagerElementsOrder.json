@@ -24,8 +24,11 @@
         "dict_txns&StateMachine_1",
         "sw_txnWatch&StateMachine_1",
         "dict_txnsItem&StateMachine_1",
-        "jss_jsonSettings&StateMachine_1",
-        "dt_reportHeader&StateMachine_1",
+        "dict_statistics&StateMachine_1",
+        "sw_jobWatch&StateMachine_1",
+        "ts_estimatedProcessingDuration&StateMachine_1",
+        "int_obsCountAttempts&StateMachine_1",
+        "bool_obsRestart&StateMachine_1",
         "ShouldStop&Sequence_25"
       ],
       "ArgumentsSectionElementsOrder": [],
@@ -43,19 +46,15 @@
         "dtime_evaluationdate&Sequence_1",
         "bool_personFound&Sequence_1",
         "dtime_startdate&Sequence_1",
-        "str_email&Sequence_1",
-        "str_inputSubtype&Sequence_1",
-        "str_statusMessageSAP&Sequence_1",
-        "str_currentMenuTitle&Sequence_1"
+        "str_email&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_TransactionID",
         "io_dict_txnsItem",
         "io_uie_sapWnd",
         "io_sw_txnWatch",
-        "io_dict_txns",
-        "in_jss_jsonSettings",
-        "in_Config"
+        "in_Config",
+        "io_dict_txns"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -70,12 +69,12 @@
         "str_senderEmailFinal&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "in_str_senderEmail",
         "in_list_attachments",
         "in_str_body",
         "in_str_recipient",
         "in_str_subject",
-        "in_Config"
+        "in_Config",
+        "in_str_senderEmail"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -89,12 +88,11 @@
         "AssetValue&Sequence_11"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_dict_statistics",
         "in_ConfigFile",
         "in_ConfigSheets",
         "out_Config",
-        "out_dict_txns",
-        "out_jss_jsonSettings",
-        "out_dt_reportHeader"
+        "out_dict_txns"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -103,7 +101,9 @@
       "Path": "Framework/SetTransactionStatus.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "bool_canAppendToReport&Flowchart_2",
+        "int_retryNumberSnapshot&Flowchart_2",
+        "int_transactionNumberSnapshot&Flowchart_2",
+        "str_status&Flowchart_2",
         "QueueRetry&Sequence_17"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -114,11 +114,7 @@
         "io_RetryNumber",
         "io_TransactionNumber",
         "io_ConsecutiveSystemExceptions",
-        "io_sw_txnWatch",
-        "in_dict_txnsItem",
-        "in_dt_reportHeader",
-        "in_Config",
-        "io_uie_sapWnd"
+        "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -127,6 +123,7 @@
       "Path": "Workflows/SAP Workflows/SAP - Login.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_systemMessage&Sequence_1",
         "str_sapUsername&Sequence_1",
         "str_sapClient&Sequence_1",
         "str_sapLanguage&Sequence_1",
@@ -143,36 +140,14 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Workflows/File Workflows/Json - Persist Transaction In Txns And In-Memory.xaml",
+      "Path": "Workflows/File Workflows/Json - Persist Transaction In Transactions And In-Memory.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_toAppendingRows&Sequence_1"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
         "io_dict_txns",
         "in_Config",
         "in_dict_txnsItem",
-        "in_jss_jsonSettings",
         "in_str_txnsItemKey"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Workflows/File Workflows/Excel - Append Transaction To Report.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "str_smptLoginUser&Sequence_1",
-        "str_emailLoginPassword&Sequence_1",
-        "str_senderNameFinal&Sequence_1",
-        "str_senderEmailFinal&Sequence_1",
-        "dt_toAppendingRows&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_dict_txnsItem",
-        "in_dt_reportHeader",
-        "in_str_txnsItemKey",
-        "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -182,9 +157,9 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
-        "in_dict_txns",
-        "io_Config",
-        "in_bool_shouldSumDuration"
+        "in_bool_shouldSumDuration",
+        "io_dict_statistics",
+        "in_dict_txns"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -267,12 +242,13 @@
         "str_destMenuCode&Sequence_1",
         "bool_onMainMenu&Sequence_1",
         "str_mainMenuTitle&Sequence_1",
-        "str_currentMenuTitle&Sequence_1"
+        "str_currentMenuTitle&Sequence_1",
+        "str_mainMenuCode&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_str_destMenuDetails",
-        "in_str_mainMenuDetails",
-        "io_uie_sapWnd"
+        "io_uie_sapWnd",
+        "in_str_mainMenuDetails"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -281,24 +257,16 @@
       "Path": "Workflows/SAP Workflows/SAP - Search With Personal Data.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "str_personalnumber&Sequence_1",
-        "str_enddate&Sequence_1",
-        "str_finalBemerkung&Sequence_1",
-        "dt_searchResults&Sequence_1",
-        "dtime_evaluationdate&Sequence_1",
-        "bool_personFound&Sequence_1",
-        "dtime_startdate&Sequence_1",
-        "str_email&Sequence_1",
-        "str_statusMessageSAP&Sequence_1",
         "bool_labelNameExists&Sequence_1",
-        "str_attrStateInfoType&Sequence_1"
+        "str_attrStateInfoType&Sequence_1",
+        "str_statusMessageSAP&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "in_str_personalnumber",
         "in_str_infotype",
         "in_str_subtype",
         "out_bool_searchFound",
-        "io_uie_sapWnd"
+        "io_uie_sapWnd",
+        "in_str_personalnumber"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -307,14 +275,6 @@
       "Path": "Workflows/SAP Workflows/SAP - Retrieve Subtype '14' Results.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "str_personalnumber&Sequence_1",
-        "str_enddate&Sequence_1",
-        "str_finalBemerkung&Sequence_1",
-        "dt_searchResults&Sequence_1",
-        "dtime_evaluationdate&Sequence_1",
-        "bool_personFound&Sequence_1",
-        "dtime_startdate&Sequence_1",
-        "str_email&Sequence_1",
         "str_inputSubtype&Sequence_1",
         "str_statusMessageSAP&Sequence_1",
         "str_currentMenuTitle&Sequence_1"
@@ -335,9 +295,23 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "out_str_email",
-        "in_str_personalnumber",
         "in_Config",
+        "in_str_personalnumber",
         "io_uie_sapWnd"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/File Workflows/Excel - Write Transactions To Report.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_reportHeader&Sequence_1",
+        "dt_toAppendingRows&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dict_txns",
+        "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
